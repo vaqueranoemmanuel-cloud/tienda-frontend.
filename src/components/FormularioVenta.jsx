@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { api } from '../api';
+import axios from 'axios';
 function FormularioVenta() {
 const [formData, setFormData] = useState({
 estudiante_id: '',
@@ -11,10 +11,10 @@ const [estudiantes, setEstudiantes] = useState([]);
 const [productos, setProductos] = useState([]);
 // Cargar listas de estudiantes y productos al iniciar
 useEffect(() => {
-api.get('/estudiantes')
+axios.get('http://localhost:3000/estudiantes')
 .then(res => setEstudiantes(res.data))
 .catch(err => console.error(err));
-api.get('/productos')
+axios.get('http://localhost:3000/productos')
 .then(res => setProductos(res.data))
 .catch(err => console.error(err));
 }, []);
@@ -26,7 +26,7 @@ setFormData({
 };
 const handleSubmit = (e) => {
 e.preventDefault();
-api.post('/ventas', datos)
+axios.post('http://localhost:3000/ventas', formData)
 .then(res => {
 alert(res.data.message);
 setFormData({ estudiante_id: '', producto_id: '', cantidad: '',
