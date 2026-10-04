@@ -73,6 +73,17 @@ function ListaVentas() {
   );
 }
 
+// En tu archivo ListaVentas.jsx
+{ventaEditando && (
+  <EditarVenta 
+    venta={ventaEditando} 
+    onUpdate={() => {
+      setVentaEditando(null); // Oculta el formulario tras actualizar
+      cargarVentas();         // Vuelve a traer las ventas de la BD
+    }} 
+  />
+)}
+
 <div className="main-container">
   
   {/* ENCABEZADO */}
