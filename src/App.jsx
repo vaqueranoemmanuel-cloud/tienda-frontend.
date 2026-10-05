@@ -235,13 +235,6 @@ function App() {
                 </tbody>
               </table>
             </div>
-
-            <div className="side-image-container">
-              <img
-                src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80"
-                alt="Comida Cafetería"
-              />
-            </div>
           </div>
         </section>
       </div>

@@ -212,7 +212,7 @@ input[type='number'].form-control::-webkit-inner-spin-button {
 
 .table-and-image-wrapper {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 240px;
+  grid-template-columns: minmax(0, 1fr);
   gap: 24px;
   align-items: stretch;
 }
